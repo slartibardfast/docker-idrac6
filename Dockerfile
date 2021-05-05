@@ -6,6 +6,7 @@ ENV APP_NAME="iDRAC 6" \
 COPY keycode-hack.c /keycode-hack.c
 
 RUN apt-get update && \
+    mkdir -p /usr/share/man/man1 && \
     apt-get install -y --no-install-recommends default-jre-headless && \
     apt-get install -y wget software-properties-common && \
     apt-get install -y openjdk-7-jdk gcc && \
