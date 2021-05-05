@@ -11,6 +11,7 @@ services:
       - IDRAC_HOST=idrac1.example.org
       - IDRAC_USER=root
       - IDRAC_PASSWORD=1234
+      - X11VNC_EXTRA_OPTS=-xwarppointer
     volumes:
       - /path/to/app:/app
       - /path/to/media:/vmedia
