@@ -8,7 +8,8 @@ COPY keycode-hack.c /keycode-hack.c
 RUN apt-get update && \
     apt-get install -y wget software-properties-common && \
     apt-get update && \
-    apt-get install -y openjdk-7-jre-headless openjdk-7-jdk gcc && \
+    apt-get install -y openjdk-7-jre-headless && \
+    apt-get install -y openjdk-7-jdk gcc && \
     gcc -o /keycode-hack.so /keycode-hack.c -shared -s -ldl -fPIC && \
     apt-get remove -y gcc software-properties-common && \
     apt-get autoremove -y && \
