@@ -5,6 +5,8 @@ ENV APP_NAME="iDRAC 6" \
 
 COPY keycode-hack.c /keycode-hack.c
 
+SHELL ["/bin/bash", "-c"]
+
 RUN apt-get update && \
     mkdir -p /usr/share/man/man1 && \
     apt-get install -y --no-install-recommends default-jre-headless && \
