@@ -7,12 +7,14 @@ COPY keycode-hack.c /keycode-hack.c
 
 RUN apt-get update && \
     apt-get install -y wget software-properties-common && \
-    add-apt-repository ppa:openjdk-r/ppa && \
+    add-apt-repository ppa:webupd8team/java && \
     apt-get update && \
-    apt-get install -y openjdk-7-jdk gcc && \
+    apt-get install -y java-common oracle-java7-installer gcc && \
     gcc -o /keycode-hack.so /keycode-hack.c -shared -s -ldl -fPIC && \
     apt-get remove -y gcc software-properties-common && \
     apt-get autoremove -y && \
+    apt install oracle-java7-set-default && \
+    source /etc/profile && \
     rm -rf /var/lib/apt/lists/* && \
     rm /keycode-hack.c
 
