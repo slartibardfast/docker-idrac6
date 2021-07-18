@@ -6,6 +6,8 @@ NC='\033[0m'
 
 echo "Starting"
 
+export XKB_DEFAULT_RULES=base
+
 if [ -f "/run/secrets/idrac_host" ]; then
     echo "Using Docker secret for IDRAC_HOST"
     IDRAC_HOST="$(cat /run/secrets/idrac_host)"
